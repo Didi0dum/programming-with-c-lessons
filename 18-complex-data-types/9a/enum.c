@@ -51,7 +51,7 @@ int main(void) {
   enum Weekday currentday;
   currentday = dayInput;
 
-  switch (dayInput) {
+  switch (currentday) {
     case MONDAY:
     case TUESDAY:
     case WEDNESDAY:
