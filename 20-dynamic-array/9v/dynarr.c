@@ -22,19 +22,25 @@ DynamicArray init(int initialCapacity) {
   return newDynamicArray;
 }
 
-static void resize(DynamicArray *arr, int newSize) {
+static void resize(DynamicArray * arr, uint newSize) {
+  if (newSize == 0) {
+    release(arr);
+    return;
+  }
   if (newSize > arr->capacity) {
-    while (newSize > arr->capacity) {
+    if (arr->capacity == 0) {
+      arr->capacity = 1;
+    }
+    while (arr->capacity < newSize) {
       arr->capacity *= 2;
     }
-    arr->buffer = (DynArrType *) realloc(arr->buffer, arr->capacity * sizeof(DynArrType));
+    arr->buffer = (DynArrType *)realloc(arr->buffer, arr->capacity * sizeof(DynArrType));
     ASSERT_MEMORY_ALLOC(arr->buffer);
-  } else if (newSize < arr->capacity / 2) {
+  } else if (newSize <= arr->capacity / 2) {
     arr->capacity = newSize;
-    arr->buffer = (DynArrType *) realloc(arr->buffer, arr->capacity * sizeof(DynArrType));
+    arr->buffer = (DynArrType *)realloc(arr->buffer, arr->capacity * sizeof(DynArrType));
     ASSERT_MEMORY_ALLOC(arr->buffer);
   }
-
   arr->size = newSize;
 }
 
