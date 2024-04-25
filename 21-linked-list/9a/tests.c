@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include "linkedlist.h"
 
+void printElement(uint index, ListType value) {
+  printf("[%u]=>%lf ", index, value);
+}
+
 void printLinkedList(LinkedList * list) {
-  struct ListNode * currentNode = list->head;
-  while (currentNode != NULL){
-    printf("%lf ", currentNode->value);
-    currentNode = currentNode->next;
-  }
+  forEach(list, printElement);
   printf("\n");
 }
 

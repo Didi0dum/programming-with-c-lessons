@@ -29,4 +29,6 @@ ListType popBack(LinkedList * list);
 
 void release(LinkedList * list);
 
+void forEach(LinkedList * list, void (*callback)(uint, ListType));
+
 #endif
