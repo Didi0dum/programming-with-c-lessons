@@ -29,4 +29,7 @@ ListType popBack(LinkedList * list);
 
 void release(LinkedList * list);
 
+typedef void (*ForeachCallback)(uint, ListType);
+void forEach(LinkedList * list, ForeachCallback callback);
+
 #endif

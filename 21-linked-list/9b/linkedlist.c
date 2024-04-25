@@ -103,3 +103,13 @@ void release(LinkedList * list) {
     popFront(list);
   }
 }
+
+void forEach(LinkedList * list, ForeachCallback callback) {
+  struct ListNode * currentNode = list->head;
+  uint index = 0;
+  while (currentNode != NULL) {
+    callback(index, currentNode->value);
+    currentNode = currentNode->next;
+    index++;
+  }
+}
