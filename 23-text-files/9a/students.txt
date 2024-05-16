@@ -1,0 +1,4 @@
+1 Ivan 5.25
+2 Nikola 5.35
+3 Anna 6
+4 Dimitar 4.50

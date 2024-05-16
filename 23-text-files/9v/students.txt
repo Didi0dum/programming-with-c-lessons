@@ -1,0 +1,4 @@
+1 Anna 5.10
+2 Maria 5.60000
+3 Nikolai 4.50
+4 Martin 5.50
